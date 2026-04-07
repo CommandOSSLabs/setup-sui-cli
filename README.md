@@ -56,3 +56,7 @@ Install and configure wallet:
     network: testnet
     private_key: ${{ secrets.SUI_DEPLOYER_PRIVATE_KEY }}
 ```
+
+## License
+
+This project is licensed under the [Apache License 2.0](LICENSE).

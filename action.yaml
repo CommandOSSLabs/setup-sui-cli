@@ -13,7 +13,7 @@ inputs:
     description: Sui private key to import into the local keystore (accepted by `sui keytool import <PRIVATE_KEY> ed25519`, typically `suiprivkey...`; obtain with `sui keytool export --key-identity <SUI_ADDRESS>`). When omitted, the action only installs the CLI.
     required: false
   version:
-    description: Sui CLI version tag to install.
+    description: Sui CLI version tag to install. Check available versions at https://github.com/MystenLabs/sui/releases/
     required: false
     default: mainnet-v1.68.1
 

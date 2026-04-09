@@ -7,21 +7,22 @@ import { ensureSuiInstalled } from './ensure-sui-installed.ts'
 import { resolvePlatformSpec } from './platform.ts'
 
 const SUPPORTED_NETWORKS = new Set(['mainnet', 'testnet'])
+const DEFAULT_VERSION_BY_NETWORK: Record<string, string> = {
+  mainnet: 'mainnet-v1.69.2',
+  testnet: 'testnet-v1.69.2',
+}
 
 async function main(): Promise<void> {
   const network = core.getInput('network') || 'testnet'
   const privateKey = core.getInput('private_key')
-  const version = core.getInput('version') || 'mainnet-v1.68.1'
-
-  if (!version) {
-    throw new Error('version input is required')
-  }
 
   if (!SUPPORTED_NETWORKS.has(network)) {
     throw new Error(
       `Unsupported network '${network}'. Supported values are: mainnet, testnet.`
     )
   }
+
+  const version = core.getInput('version') || DEFAULT_VERSION_BY_NETWORK[network]
 
   const installDir = path.join(os.homedir(), '.local', 'bin')
   const { binaryName } = resolvePlatformSpec()

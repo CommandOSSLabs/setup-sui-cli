@@ -9,7 +9,7 @@ import { resolvePlatformSpec } from './platform.ts'
 const SUPPORTED_NETWORKS = new Set(['mainnet', 'testnet'])
 const DEFAULT_VERSION_BY_NETWORK: Record<string, string> = {
   mainnet: 'mainnet-v1.69.2',
-  testnet: 'testnet-v1.69.2',
+  testnet: 'testnet-v1.70.1',
 }
 
 async function main(): Promise<void> {

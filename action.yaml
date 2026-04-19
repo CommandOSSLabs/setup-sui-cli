@@ -32,7 +32,7 @@ inputs:
       Sui CLI version tag to install.
 
       Default by network:
-      - testnet: `testnet-v1.69.2`
+      - testnet: `testnet-v1.70.1`
       - mainnet: `mainnet-v1.69.2`
 
       Available releases: https://github.com/MystenLabs/sui/releases/

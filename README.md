@@ -11,7 +11,7 @@ Sui CLI is the official command-line tool for interacting with the [Sui blockcha
 | Input         | Default           | Description                                   |
 | ------------- | ----------------- | --------------------------------------------- |
 | `network`     | `testnet`         | Supported values are `mainnet` and `testnet`. |
-| `version`     | `testnet-v1.69.2` (testnet) / `mainnet-v1.69.2` (mainnet) | Sui CLI version tag to install. |
+| `version`     | `testnet-v1.70.1` (testnet) / `mainnet-v1.69.2` (mainnet) | Sui CLI version tag to install. |
 | `private_key` | -                 | A Bech32-formatted private key to import      |
 
 > [!TIP]

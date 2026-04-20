@@ -8,11 +8,11 @@ Sui CLI is the official command-line tool for interacting with the [Sui blockcha
 
 ## Inputs
 
-| Input         | Default           | Description                                   |
-| ------------- | ----------------- | --------------------------------------------- |
-| `network`     | `testnet`         | Supported values are `mainnet` and `testnet`. |
-| `version`     | latest release tag for the selected network | Sui CLI version tag to install. |
-| `private_key` | -                 | A Bech32-formatted private key to import      |
+| Input         | Default   | Description                                   |
+| ------------- | --------- | --------------------------------------------- |
+| `network`     | `testnet` | Supported values are `mainnet` and `testnet`. |
+| `version`     | -         | Sui CLI version tag to install.               |
+| `private_key` | -         | A Bech32-formatted private key to import      |
 
 If `version` is omitted, the action fetches the latest network-specific release tag from the official [MystenLabs/sui](https://github.com/MystenLabs/sui/releases) repository.
 

@@ -31,9 +31,7 @@ inputs:
     description: |-
       Sui CLI version tag to install.
 
-      Default by network:
-      - testnet: `testnet-v1.70.1`
-      - mainnet: `mainnet-v1.69.2`
+      If omitted, the action resolves the latest network-specific release tag from the official Sui repository.
 
       Available releases: https://github.com/MystenLabs/sui/releases/
     required: false

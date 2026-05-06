@@ -31,6 +31,7 @@ export async function fetchDefaultVersion(
       `${OFFICIAL_SUI_RELEASES_API}?per_page=${RELEASES_PER_PAGE}&page=${page}`,
       {
         headers: buildGitHubHeaders(),
+        cache: 'no-store',
       }
     )
 

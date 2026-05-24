@@ -62,3 +62,9 @@ Install and configure wallet:
 ## License
 
 This project is licensed under the [Apache License 2.0](LICENSE).
+
+---
+
+<p align="center">
+  <strong>Built with ❤️ by the CommandOSS Team</strong>
+</p>

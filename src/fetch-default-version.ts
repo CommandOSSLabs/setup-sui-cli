@@ -9,28 +9,29 @@ type GitHubRelease = {
   tag_name?: string
 }
 
-function buildGitHubHeaders(): Record<string, string> {
+function buildGitHubHeaders(token?: string): Record<string, string> {
   const headers: Record<string, string> = {
     Accept: 'application/vnd.github+json',
     'User-Agent': 'setup-sui-cli-action',
   }
 
-  const token = process.env.GITHUB_TOKEN
-  if (token) {
-    headers.Authorization = `Bearer ${token}`
+  const resolvedToken = token ?? process.env.GITHUB_TOKEN
+  if (resolvedToken) {
+    headers.Authorization = `Bearer ${resolvedToken}`
   }
 
   return headers
 }
 
 export async function fetchDefaultVersion(
-  network: 'mainnet' | 'testnet'
+  network: 'mainnet' | 'testnet',
+  token?: string
 ): Promise<string> {
   for (let page = 1; page <= MAX_RELEASE_PAGES; page++) {
     const response = await fetch(
       `${OFFICIAL_SUI_RELEASES_API}?per_page=${RELEASES_PER_PAGE}&page=${page}`,
       {
-        headers: buildGitHubHeaders(),
+        headers: buildGitHubHeaders(token),
         cache: 'no-store',
       }
     )

@@ -35,6 +35,13 @@ inputs:
 
       Available releases: https://github.com/MystenLabs/sui/releases/
     required: false
+  token:
+    description: |-
+      GitHub token used to authenticate requests to the GitHub API when resolving the default Sui CLI version.
+
+      Defaults to the workflow's built-in `github.token` to avoid unauthenticated rate limits.
+    required: false
+    default: ${{ github.token }}
 
 outputs:
   rpc_url:

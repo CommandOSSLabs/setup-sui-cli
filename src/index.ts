@@ -18,6 +18,7 @@ function isSupportedNetwork(network: string): network is SupportedNetwork {
 async function main(): Promise<void> {
   const network = core.getInput('network') || 'testnet'
   const privateKey = core.getInput('private_key')
+  const token = core.getInput('token') || undefined
 
   if (!isSupportedNetwork(network)) {
     throw new Error(
@@ -26,7 +27,7 @@ async function main(): Promise<void> {
   }
 
   const version =
-    core.getInput('version') || (await fetchDefaultVersion(network))
+    core.getInput('version') || (await fetchDefaultVersion(network, token))
 
   const installDir = path.join(os.homedir(), '.local', 'bin')
   const { binaryName } = resolvePlatformSpec()
